@@ -2,11 +2,11 @@ sudo: required
 service:
  - docker
 before_install:
-  - docker build -t palanisu/travis:v2.0 .
+  - docker build -t palaniec/travis:v2.0 .
 script:
  - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
  - docker images # to verify image is build or not
- - docker push palanisu/travis:v2.0
+ - docker push palaniec/travis:v2.0
 notifications:
  email:
    recipients:
